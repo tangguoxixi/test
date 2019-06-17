@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="icon" href="img/logo.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/singer.css" />
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1157158_21borsymnp.css" />
+		<!--<link rel="stylesheet" type="text/css" href="swiper.min.css" />-->
+		<style type="text/css">
+			.wrap {
+				width: 100%;
+				height: 100%;
+				margin: 0 auto;
+				background: #f5f5f5;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.nav_one {
+				height: 70px;
+				margin: 0 auto;
+				background: #242424;
+				border: 1px solid #000;
+			}
+			
+			.main {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.nav_two {
+				width: 100%;
+				height: 5px;
+			}
+			
+			.cor {
+				right: -288px;
+				top: 66px;
+			}
+			
+			.footer {
+				width: 100%;
+				height: 189px;
+			}
+			
+			.pic {
+				width: 807px;
+				height: 268px;
+				position: absolute;
+				top: 104px;
+				left: 86px;
+				background: url(img/mymusic.png);
+			}
+			
+			.main1 {
+				margin-top: -10px;
+				border-bottom: 1px solid #C2C2C2;
+			}
+			
+			.main2 {
+				border-bottom: 1px solid #C2C2C2;
+			}
+			
+			.main3 {
+				border-bottom: 1px solid #C2C2C2;
+			}
+			
+			.n-dcode {
+				position: fixed;
+				z-index: 10;
+				right: 22px;
+				top: 395px;
+				background: #fff;
+				box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+				opacity: 0.75;
+			}
+			
+			.n-dcode img {
+				width: 105px;
+				height: 105px;
+			}
+			
+			.n-dcode p {
+				padding: 0 0 5px 12px;
+			}
+			
+			.g-btmbar {
+				position: fixed;
+				_position: absolute;
+				zoom: 1;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 0;
+				width: 100%;
+				z-index: 1002;
+			}
+			
+			.m-playbar {
+				position: absolute;
+				zoom: 1;
+				top: -53px;
+				left: 0;
+				width: 100%;
+				height: 53px;
+				margin: 0 auto;
+			}
+			
+			.m-playbar .updn {
+				position: relative;
+				z-index: 11;
+			}
+			
+			.m-playbar .updn .left {
+				position: absolute;
+				top: -14px;
+				right: 15px;
+				width: 52px;
+				height: 67px;
+			}
+			
+			.f-fl {
+				float: left;
+			}
+			
+			.m-playbar .updn .left {
+				background: url(img/playbar.png) no-repeat;
+				background-position: 0 -380px;
+			}
+			
+			.m-playbar .updn .btn1 {
+				display: block;
+				width: 18px;
+				height: 18px;
+				margin: 6px 0 0 17px;
+			}
+			
+			.m-playbar-lock .updn .btn1 {
+				background: url(img/playbar.png) no-repeat;
+				background-position: -100px -380px;
+			}
+			
+			.m-playbar .updn .right {
+				position: absolute;
+				top: -1px;
+				right: 0;
+				width: 15px;
+				height: 54px;
+				background: url(img/playbar.png) no-repeat;
+				background-position: -52px -393px;
+				pointer-events: none;
+			}
+			
+			.m-playbar .bg {
+				height: 53px;
+				zoom: 1;
+				margin-right: 67px;
+				background-position: 0 0;
+				background: url(img/playbar.png) repeat-x;
+			}
+			
+			.m-playbar .g_player {
+				position: absolute;
+				left: 50%;
+				top: 6px;
+				z-index: 15;
+				width: 980px;
+				height: 47px;
+				margin: 0 auto;
+			}
+			
+			.m-playbar .btns {
+				width: 137px;
+				padding: 6px 0 0 0;
+				float: left;
+			}
+			
+			.m-playbar .btns a {
+				display: block;
+				float: left;
+				width: 28px;
+				height: 28px;
+				margin-right: 8px;
+				margin-top: 5px;
+				background: url(img/playbar.png) repeat-x;
+			}
+			
+			.m-playbar .btns .prv {
+				background-position: 0 -130px;
+			}
+			
+			.m-playbar .btns .ply {
+				width: 36px;
+				height: 36px;
+				margin-top: 0;
+				background-position: 0 -204px;
+			}
+			
+			.m-playbar .btns .nxt {
+				background-position: -80px -130px;
+			}
+			
+			.m-playbar .head img {
+				width: 34px;
+				height: 34px;
+			}
+			
+			.m-playbar .head {
+				/*width: 34px;
+    height: 34px;*/
+				position: relative;
+				margin: 6px 15px 0 0;
+				float: left;
+			}
+			
+			.m-playbar .head .mask {
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: block;
+				width: 34px;
+				height: 35px;
+				background: url(img/playbar.png) no-repeat;
+				background-position: 0 -80px;
+			}
+			
+			.m-playbar .play {
+				position: relative;
+				width: 608px;
+				height: 37px;
+				float: left;
+			}
+			
+			.m-playbar .words {
+				height: 28px;
+				overflow: hidden;
+				color: #e8e8e8;
+				text-shadow: 0 1px 0 #171717;
+				line-height: 28px;
+			}
+			
+			.m-pbar {
+				width: 493px;
+				height: 9px;
+				position: relative;
+			}
+			
+			.m-pbar .barbg {
+				width: 493px;
+				height: 9px;
+				background: url(img/statbar.png) no-repeat;
+				background-position: right 0;
+			}
+			
+			.m-pbar .rdy {
+				height: 9px;
+				background: url(img/statbar.png) no-repeat;
+			}
+			
+			.m-pbar .cur {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url(img/statbar.png) no-repeat;
+				background-position: left -66px;
+			}
+			
+			.m-pbar .btn2 {
+				position: absolute;
+				top: -7px;
+				right: -13px;
+				width: 22px;
+				height: 24px;
+				margin-left: -11px;
+				background: url(img/ann.png) no-repeat;
+				background-position: 0 -250px;
+			}
+			
+			.m-pbar .time {
+				position: absolute;
+				top: -3px;
+				right: -84px;
+				color: #797979;
+				text-shadow: 0 1px 0 #121212;
+			}
+			
+			.m-playbar .oper {
+				width: 60px;
+				float: left;
+			}
+			
+			.m-playbar .icn {
+				float: left;
+				width: 25px;
+				height: 25px;
+				margin: 11px 2px 0 0;
+				background: url(img/playbar.png) no-repeat;
+			}
+			
+			.m-playbar .icn-add {
+				background-position: -88px -163px;
+			}
+			
+			.m-playbar .icn-add:hover {
+				background-position: -88px -189px;
+			}
+			
+			.m-playbar .icn-share {
+				background-position: -114px -163px;
+			}
+			
+			.m-playbar .icn-share:hover {
+				background-position: -114px -189px;
+			}
+			
+			.m-playbar .ctrl {
+				position: relative;
+				z-index: 10;
+				width: 113px;
+				padding-left: 13px;
+				background: url(img/playbar.png) no-repeat -147px -238px;
+			}
+			
+			.m-vol {
+				position: absolute;
+				top: -113px;
+				left: 9px;
+				clear: both;
+				width: 32px;
+				height: 113px;
+			}
+			
+			.m-vol .barbg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 32px;
+				height: 113px;
+				background: url(img/playbar.png) no-repeat 0 -503px;
+			}
+			
+			.m-vol .vbg {
+				padding: 4px 0;
+				top: 7px;
+			}
+			
+			.m-vol .vbg {
+				position: absolute;
+				left: 14px;
+				width: 4px;
+				height: 93px;
+			}
+			
+			.m-vol .curr {
+				top: auto;
+				bottom: 4px;
+				left: 0;
+				background: url(img/playbar.png) no-repeat;
+				background-position: -40px bottom;
+				overflow: hidden;
+			}
+			
+			.m-vol .curr {
+				position: absolute;
+				width: 4px;
+			}
+			
+			.m-vol .btn3 {
+				position: absolute;
+				left: -7px;
+				display: block;
+				width: 18px;
+				height: 20px;
+				background: url(img/ann.png) no-repeat -40px -250px;
+				cursor: pointer;
+			}
+			
+			.m-playbar .icn-vol {
+				background-position: -2px -248px;
+			}
+			
+			.m-playbar .icn-vol:hover {
+				background-position: -31px -248px;
+			}
+			
+			.m-playbar .icn-loop {
+				background-position: -3px -344px;
+			}
+			
+			.m-playbar .icn-loop:hover {
+				background-position: -33px -344px;
+			}
+			
+			.m-playbar .add {
+				float: left;
+				width: 59px;
+				height: 36px;
+			}
+			
+			.f-pr {
+				position: relative;
+				zoom: 1;
+			}
+			
+			.m-playbar .tip {
+				position: absolute;
+				top: -51px;
+				left: -65px;
+				clear: both;
+				width: 152px;
+				height: 49px;
+				background: url(img/playbar.png) no-repeat;
+				background-position: 0 -287px;
+				text-align: center;
+				color: #fff;
+				line-height: 37px;
+			}
+			
+			.m-playbar .icn-list {
+				display: block;
+				float: none;
+				width: 38px;
+				padding-left: 21px;
+				background-position: -42px -68px;
+				line-height: 27px;
+				text-align: center;
+				color: #666;
+				text-shadow: 0 1px 0 #080707;
+				text-indent: 0;
+				text-decoration: none;
+			}
+			
+			.m-playbar .icn-list:hover {
+				background-position: -42px -98px;
+			}
+		</style>
+	</head>
+
+	<body style="min-width: 1102px;">
+		<div class="wrap">
+			<div class="header">
+				<div class="header">
+					<div class="nav_one">
+						<div class="nav_box">
+							<a href="https://music.163.com/#" class="logo"><img src="img/logo1.png" /></a>
+							<ul class="nav_one_ul"></ul>
+							<img src="img/hot.png" class="hot" />
+							<div class="search">
+								<div class="searcher">
+									<a class="iconfont icon-fangdajing"></a>
+									<input type="text" name="" class="searchbox" placeholder="音乐/视频/电台/用户" onfocus="this.placeholder=''" onblur="this.placeholder='音乐/视频/电台/用户'" />
+								</div>
+							</div>
+							<div class="maker_center">
+								<a href="#">创造者中心</a>
+							</div>
+							<div class="login">
+								<a href="#" class="dl">登录</a>&nbsp;
+								<span class="iconfont icon-daosanjiao"></span>
+								<a class="iconfont icon-arrLeft-fill"></a>
+								<ul class="login_menu">
+									<li>
+										<a class="iconfont icon-shouji">&nbsp;手机号登录</a>
+									</li>
+									<li>
+										<a class="iconfont icon-weixin">&nbsp;微信登录</a>
+									</li>
+									<li>
+										<a href="qq.html">&nbsp;QQ登录</a>
+									</li>
+									<li>
+										<a href="weibo.html" class="iconfont icon-xinlangweibo">&nbsp;新浪微博登录</a>
+									</li>
+									<li>
+										<a class="iconfont icon-yi">&nbsp;网易邮箱账号登录</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="nav_two" style="min-width: 1097px;">
+					</div>
+				</div>
+			</div>
+
+			<div class="main">
+				<div class="lb"><img src="img/lb.png" /></div>
+				<div class="main1"><img src="img/main1.png" /></div>
+				<div class="main2"><img src="img/mian2.png" /></div>
+				<div class="main3"><img src="img/main3.png" /></div>
+				<div class="main4"><img src="img/main4.png" /></div>
+				<div class="main5"><img src="img/main5.png" /></div>
+				<div class="main6"><img src="img/main6.png" /></div>
+				<div class="n-dcode">
+					<img alt="http://music.163.com" class="img" src="img/code.png">
+					<p>扫描二维码下载</p>
+				</div>
+			</div>
+
+			<div class="footer">
+				<div class="footer-z">
+					<div class="wrap f-cb">
+						<div class="copy">
+							<p class="link">
+								<a href="//music.163.com/about" target="_blank" class="item s-fc4">关于网易</a>
+								<span class="line">|</span>
+								<a href="//help.mail.163.com/service.html" target="_blank" class="item s-fc4">客户服务</a>
+								<span class="line">|</span>
+								<a href="//music.163.com/html/web2/service.html" target="_blank" class="item s-fc4">服务条款</a>
+								<span class="line">|</span>
+								<a href="//corp.163.com/gb/legal.html" target="_blank" class="item s-fc4">隐私政策</a>
+								<span class="line">|</span>
+								<a href="//music.163.com/st/staticdeal/complaints.html" target="_blank" class="item s-fc4">版权投诉指引</a>
+								<span class="line">|</span>
+								<a id="g_feedback" href="#" class="item s-fc4" onclick="nm.x.feedback();return false;" hidefocus="true">意见反馈</a>
+								<span class="line">|</span>
+							</p>
+							<p class="right">
+								<span class="sep span">网易公司版权所有©1997-2019</span>
+								<span class="span">杭州乐读科技有限公司运营：</span>
+								<a href="http://p1.music.126.net/03WF0APmm-J0TqdbOc8-XQ==/109951163649544962.png" target="_blank" class="alink">浙网文[2018]3506-263号</a>
+							</p>
+							<p class="contact">
+								<span class="sep span">违法和不良信息举报电话：0571-89853516</span>
+								<span class="span">举报邮箱：</span>
+								<a class="alink" href="mailto:ncm5990@163.com">ncm5990@163.com</a>
+							</p>
+						</div>
+						<ul class="enter f-fr1">
+							<li class="unit">
+								<a class="logo logonew logo-auth f-tid" href="//music.163.com/st/userbasic#/auth" target="_blank">
+									<!--<img src="img/user.png" style="width: 49px;height: 48px;" />-->
+								</a>
+								<span class="tt tt-auth"></span>
+							</li>
+							<li class="unit">
+								<a class="logo logonew logo-musician f-tid" href="//music.163.com/recruit" target="_blank"></a>
+								<span class="tt tt-musician"></span>
+							</li>
+							<li class="unit">
+								<a class="logo logonew logo-reward f-tid" href="//music.163.com/web/reward" target="_blank"></a>
+								<span class="tt tt-reward"></span>
+							</li>
+							<li class="unit">
+								<a class="logo logonew logo-cash f-tid" href="//music.163.com/uservideo#/plan" target="_blank"></a>
+								<span class="tt tt-cash"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div id='bbox'>
+				<div id="sbox">
+					<div class="sb-top">
+						登录
+
+					</div>
+					<span class="gbct" title="关闭窗体">×</span>
+					<div class="sb-botton">
+						<div class="u-main">
+							<div class="u-plt"></div>
+							<div class="f-mgt10">
+								<a href="javascript:;" class="u-btn2-2" data-action="login" data-type="mobile">
+									<p>手机号登录</p>
+									<span></span>
+								</a>
+
+							</div>
+							<div class="f-mgt10">
+								<a href="javascript:;" class="u-btn2-1" data-action="reg">
+									<p>注　册</p>
+									<span></span>
+								</a>
+							</div>
+						</div>
+						<div class="u-alt">
+							<ul>
+								<li>
+									<a href="#" target="_blank" data-action="login" data-type="thirdparty">
+										<div class="u-mlg2 u-mlg2-wx"></div>
+										<p>微信登录</p>
+									</a>
+								</li>
+								<li>
+									<a href="qq.html" target="_blank" data-action="login" data-type="thirdparty">
+										<div class="u-mlg2 u-mlg2-qq"></div>
+										<p>QQ登录</p>
+									</a>
+								</li>
+								<li>
+									<a href="weibo.html" target="_blank" data-action="login" data-type="thirdparty">
+										<div class="u-mlg2 u-mlg2-sn"></div>
+										<p>微博登录</p>
+									</a>
+								</li>
+								<li>
+									<a href="#" data-action="login" data-type="netease">
+										<div class="u-mlg2 u-mlg2-wy"></div>
+										<p>网易邮箱帐号登录</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="g-btmbar">
+			<div class="m-playbar m-playbar-lock" style="top: -53px; visibility: visible;">
+				<div class="updn">
+					<div class="left f-fl">
+						<a class="btn1" hidefocus="true" data-action="lock"></a>
+					</div>
+					<div class="right f-fl"></div>
+				</div>
+				<div class="bg"></div>
+				<div class="hand" title="展开播放条"></div>
+				<div class="g_player" style="margin-left: -498.5px;">
+					<div class="btns">
+						<a class="prv" title="上一首(ctrl+←)"></a>
+						<a class="ply j-flag" title="播放/暂停(p)"></a>
+						<a class="nxt" title="下一首(ctrl+→)"></a>
+					</div>
+					<div class="head j-flag">
+						<img src="img/default_album.jpg" />
+						<!--<a  class="mask"></a>-->
+						<a href="javascript:;" hidefocus="true" class="mask"></a>
+					</div>
+					<div class="play">
+						<div class="j-flag words"></div>
+						<div class="m-pbar">
+							<div class="barbg j-flag">
+								<div class="rdy" style="width:0%;"></div>
+								<div class="cur" style="width:0%;">
+									<span class="btn2 f-tdn f-alpha z-load" id="auto-id-lrel6w8rqoy4E60z"><i></i></span>
+								</div>
+							</div>
+							<span class="j-flag time">
+										<em>00:00</em> / 00:00
+									</span>
+						</div>
+					</div>
+					<div class="oper f-fl">
+						<a class="icn icn-add j-flag"></a>
+						<a class="icn icn-share"></a>
+					</div>
+					<div class="ctrl f-fl f-pr j-flag">
+						<div class="m-vol" style="display: none;" id="auto-id-ZvFZozD9C4lBwP52">
+							<div class="barbg"></div>
+							<div class="vbg j-t" id="auto-id-a0L37IoZ0vJ4Ma54">
+								<div class="curr j-t" style="height: 74.4px;"></div>
+								<span class="btn3 f-alpha j-t" style="top: 16.2px;"></span>
+							</div>
+						</div>
+						<a href="javascript:;" hidefocus="true" data-action="volume" class="icn icn-vol"></a>
+						<a href="javascript:;" hidefocus="true" data-action="mode" class="icn icn-loop" title="循环"></a>
+						<span class="add f-pr">
+								<span class="tip" style="display:none;">已添加到播放列表</span>
+						<a href="javascript:;" title="播放列表" hidefocus="true" data-action="panel" class="icn icn-list s-fc3">0</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/singer.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var cor = $("<sub class='cor'>&nbsp;</sub>")
+		cor.appendTo(".nav_one_ul")
+		$(".nav_one_ul>li>a:eq(0)").attr("href", "index.html")
+		$(".nav_one_ul>li>a:eq(1)").attr("href", "wdyy.html")
+		$(".nav_one_ul>li>a:eq(2)").attr("href", "py.html")
+		$(".nav_one_ul>li>a:eq(4)").attr("href", "w_index.html")
+
+		$(".nav_one_ul>li:eq(0)").css("background", "#232323")
+		$(".nav_one_ul>li>a:eq(0)").css("color", "#CCC")
+
+		$(".nav_one_ul>li:eq(5)").css("background", "black")
+		$(".nav_one_ul>li>a:eq(5)").css("color", "white")
+
+		$(".nav_one_ul>li:eq(0)").mouseenter(function() {
+			$(this).css("background", "#000")
+		}).mouseleave(function() {
+			$(this).css("background", "#232323")
+		})
+
+		$(".nav_one_ul>li>a:eq(0)").mouseenter(function() {
+			$(this).css("color", "white")
+		}).mouseleave(function() {
+			$(this).css("color", "#CCC")
+		})
+		$(function() {
+			$(document).scroll(function() {
+				var top = $(document).scrollTop()
+				if(top >= 50) {
+					$(".m-back").css("display", "block")
+				} else if(top < 50) {
+					$(".m-back").css("display", "none")
+				}
+			});
+		})
+		var i = 1;
+
+		$(".icn-vol").click(function() {
+			i++;
+			if(i % 2 == 0) {
+				$(".m-vol").css("display", "block")
+			} else {
+				$(".m-vol").css("display", "none")
+			}
+
+		})
+	</script>
+
+</html>
