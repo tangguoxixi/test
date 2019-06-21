@@ -1495,7 +1495,7 @@ ol li>a:hover {
 	background: url(../img/button2.png) -494px -510px;
 }
 
-/*.u-btn2-1 {
+.u-btn2-1 {
 	width: 219px;
 	color: black;
 	height: 31px;
@@ -1523,7 +1523,7 @@ ol li>a:hover {
 }
 .u-btn2-1:hover span {
 	background: url(../img/button2.png) 5px -182px;
-}*/
+}
 
 .u-alt {
 	margin-top: -6px;
